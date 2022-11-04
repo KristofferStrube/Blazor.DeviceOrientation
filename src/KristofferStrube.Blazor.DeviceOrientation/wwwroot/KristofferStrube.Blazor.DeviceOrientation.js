@@ -17,6 +17,10 @@ export function addListenerForDeviceOrientation(objRef) {
     }
 }
 
+export function removeListenerForDeviceOrientation(objRef) {
+    window.removeEventListener('deviceorientation', (e) => deviceOrientationListener(e, objRef));
+}
+
 function deviceOrientationListener(e, objRef) {
     objRef.invokeMethod("InvokeOnDeviceOrientation", {alpha: e.alpha, beta: e.beta, gamma: e.gamma, absolute: e.absolute});
 }
