@@ -5,17 +5,30 @@
 
 <h2>Subscribing to changes</h2>
 
-<b>Alpha: </b>@deviceOrientation?.Alpha
-<br />
-<b>Beta: </b>@deviceOrientation?.Beta
-<br />
-<b>Gamma: </b>@deviceOrientation?.Gamma
+@if (deviceOrientation is null)
+{
+    <button class="btn btn-primary" @onclick=RequestAccess>Request Access</button>
+}
+else
+{
+    <b>Alpha: </b>
+
+    @deviceOrientation?.Alpha
+    <br />
+    <b>Beta: </b>
+
+    @deviceOrientation?.Beta
+    <br />
+    <b>Gamma: </b>
+
+    @deviceOrientation?.Gamma
+}
 
 
 @code {
     private DeviceOrientationEvent? deviceOrientation;
 
-    protected override void OnInitialized()
+    private void RequestAccess()
     {
         DeviceOrientationService.OnDeviceOrientation += HandleNewOrientation;
     }
