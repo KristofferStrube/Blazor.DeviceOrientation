@@ -1,21 +1,19 @@
 ﻿@page "/"
 @implements IDisposable
-
 @inject IDeviceOrientationService DeviceOrientationService
-@inject IJSRuntime JSRuntime
 
 <PageTitle>DeviceOrientation - Index</PageTitle>
 
 <h2>Subscribing to changes</h2>
 
 <b>Alpha: </b>
-@(deviceOrientation is null ? "no reading" : deviceOrientation.Alpha)
+@(deviceOrientation?.Alpha is null ? "no reading" : deviceOrientation.Alpha)
 <br />
 <b>Beta: </b>
-@(deviceOrientation is null ? "no reading" : deviceOrientation.Beta)
+@(deviceOrientation?.Alpha is null ? "no reading" : deviceOrientation.Beta)
 <br />
 <b>Gamma: </b>
-@(deviceOrientation is null ? "no reading" : deviceOrientation.Gamma)
+@(deviceOrientation?.Alpha is null ? "no reading" : deviceOrientation.Gamma)
 
 
 @code {
