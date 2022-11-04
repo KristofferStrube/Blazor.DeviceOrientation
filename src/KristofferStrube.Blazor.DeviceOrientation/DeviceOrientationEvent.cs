@@ -5,7 +5,7 @@ namespace KristofferStrube.Blazor.DeviceOrientation;
 
 public class DeviceOrientationEvent
 {
-    [JsonPropertyName("aplha")]
+    [JsonPropertyName("alpha")]
     public double? Alpha { get; set; }
 
     [JsonPropertyName("beta")]

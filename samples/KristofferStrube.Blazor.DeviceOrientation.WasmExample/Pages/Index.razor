@@ -1,36 +1,34 @@
 ﻿@page "/"
+@implements IDisposable
+
 @inject IDeviceOrientationService DeviceOrientationService
+@inject IJSRuntime JSRuntime
 
 <PageTitle>DeviceOrientation - Index</PageTitle>
 
 <h2>Subscribing to changes</h2>
 
-@if (deviceOrientation is null)
-{
-    <button class="btn btn-primary" @onclick=RequestAccess>Request Access</button>
-}
-else
-{
-    <b>Alpha: </b>
-
-    @deviceOrientation?.Alpha
-    <br />
-    <b>Beta: </b>
-
-    @deviceOrientation?.Beta
-    <br />
-    <b>Gamma: </b>
-
-    @deviceOrientation?.Gamma
-}
+<b>Alpha: </b>
+@(deviceOrientation is null ? "no reading" : deviceOrientation.Alpha)
+<br />
+<b>Beta: </b>
+@(deviceOrientation is null ? "no reading" : deviceOrientation.Beta)
+<br />
+<b>Gamma: </b>
+@(deviceOrientation is null ? "no reading" : deviceOrientation.Gamma)
 
 
 @code {
     private DeviceOrientationEvent? deviceOrientation;
 
-    private void RequestAccess()
+    protected override void OnInitialized()
     {
         DeviceOrientationService.OnDeviceOrientation += HandleNewOrientation;
+    }
+
+    public void Dispose()
+    {
+        DeviceOrientationService.OnDeviceOrientation -= HandleNewOrientation;
     }
 
     private void HandleNewOrientation(object? _, DeviceOrientationEvent deviceOrientationEvent)

@@ -4,9 +4,6 @@ export function addListenerForDeviceOrientation(objRef) {
             if (response == 'granted') {
                 window.addEventListener('deviceorientation', (e) => deviceOrientationListener(e, objRef));
             }
-            else {
-                center.innerHTML = "Acces denied";
-            }
         });
     }
     else {
@@ -15,13 +12,11 @@ export function addListenerForDeviceOrientation(objRef) {
             .then((results) => {
                 if (results.every((result) => result.state === "granted")) {
                     window.addEventListener('deviceorientation', (e) => deviceOrientationListener(e, objRef));
-                } else {
-                    center.innerHTML = "Acces denied";
                 }
             });
     }
 }
 
 function deviceOrientationListener(e, objRef) {
-    objRef.invokeMethod("InvokeOnDeviceOrientation", e);
+    objRef.invokeMethod("InvokeOnDeviceOrientation", {alpha: e.alpha, beta: e.beta, gamma: e.gamma, absolute: e.absolute});
 }
