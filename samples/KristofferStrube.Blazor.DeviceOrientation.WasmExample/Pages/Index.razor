@@ -23,7 +23,6 @@
     private void HandleNewOrientation(object? _, DeviceOrientationEvent deviceOrientationEvent)
     {
         deviceOrientation = deviceOrientationEvent;
-        Console.WriteLine(deviceOrientationEvent.Alpha);
         StateHasChanged();
     }
 }

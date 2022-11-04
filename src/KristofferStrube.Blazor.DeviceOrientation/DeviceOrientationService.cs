@@ -24,7 +24,7 @@ public class DeviceOrientationService : IAsyncDisposable, IDeviceOrientationServ
     {
         if (onDeviceOrientation is null)
         {
-            Task.Run(AddListenerForDeviceOrientation);
+            Task.Run(async () => AddListenerForDeviceOrientation());
         }
         onDeviceOrientation += value;
     }
