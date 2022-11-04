@@ -3,7 +3,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/KristofferStrube/Blazor.DeviceOrientation)](https://github.com/KristofferStrube/Blazor.DeviceOrientation/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/KristofferStrube/Blazor.DeviceOrientation)](https://github.com/KristofferStrube/Blazor.DeviceOrientation/stargazers)
 
-<!--[![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/KristofferStrube.Blazor.DeviceOrientation?label=NuGet%20Downloads)](https://www.nuget.org/packages/KristofferStrube.Blazor.DeviceOrientation/)  -->
+[![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/KristofferStrube.Blazor.DeviceOrientation?label=NuGet%20Downloads)](https://www.nuget.org/packages/KristofferStrube.Blazor.DeviceOrientation/)
 
 # Introduction
 A Blazor wrapper for the browser [DeviceOrientation API](https://www.w3.org/TR/orientation-event/)
