@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>preview</LangVersion>
+    <Title>Blazor Device Orientaion wrapper</Title>
+    <Description>Device Orientaion wrapper implementation for Blazor.</Description>
+    <PackageId>KristofferStrube.Blazor.DeviceOrientaion</PackageId>
+    <PackageTags>Blazor;Server;Wasm;Wrapper;DeviceOrientaion;Device;Orientaion;Sensor;JSInterop;</PackageTags>
+    <RepositoryUrl>https://github.com/KristofferStrube/Blazor.DeviceOrientaion</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageVersion>0.1.0</PackageVersion>
+    <Authors>Kristoffer Strube</Authors>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.*" />
+  </ItemGroup>
+
+</Project>

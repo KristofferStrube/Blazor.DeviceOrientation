@@ -1,0 +1,29 @@
+﻿@page "/"
+@inject IDeviceOrientationService DeviceOrientationService
+
+<PageTitle>DeviceOrientation - Index</PageTitle>
+
+<h2>Subscribing to changes</h2>
+
+<b>Alpha: </b>@deviceOrientation?.Alpha
+<br />
+<b>Beta: </b>@deviceOrientation?.Beta
+<br />
+<b>Gamma: </b>@deviceOrientation?.Gamma
+
+
+@code {
+    private DeviceOrientationEvent? deviceOrientation;
+
+    protected override void OnInitialized()
+    {
+        DeviceOrientationService.OnDeviceOrientation += HandleNewOrientation;
+    }
+
+    private void HandleNewOrientation(object? _, DeviceOrientationEvent deviceOrientationEvent)
+    {
+        deviceOrientation = deviceOrientationEvent;
+        Console.WriteLine(deviceOrientationEvent.Alpha);
+        StateHasChanged();
+    }
+}
